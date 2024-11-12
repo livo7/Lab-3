@@ -73,6 +73,11 @@ window.title("keygen")
 lbl_number_keys = tk.Label(frame, text='количество сгенерируемых ключей', font=('Arial', 20), fg='black')
 lbl_number_keys.grid(column=0, row=0, padx=0, pady=1, sticky=NW)
 
+#Number_keys и расположение
+lbl_number_keys = tk.Label(frame, text='количество сгенерируемых ключей', font=('Arial', 20), fg='black')
+lbl_number_keys.grid(column=0, row=0, padx=0, pady=1, sticky=NW)
+
+
 #Создание окна аргумента number_of_keys
 arg_number_of_keys = tk.Entry(frame, width=9)
 arg_number_of_keys.insert(0, '')
