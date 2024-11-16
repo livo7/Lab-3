@@ -5,7 +5,9 @@ from tkinter import *
 import random
 import pygame
 
+#ПЕРЕД ИСПОЛЬЗОВАНИЕМ РЕКОМИНДУЕТСЯ ПРОЧИТАТЬ ПОЯСНЕНИЕ!
 
+#Модуль музыки
 file = '8-bit_M.mp3'
 pygame.init()
 pygame.mixer.init()
@@ -13,21 +15,20 @@ pygame.mixer.music.load(file)
 pygame.mixer.music.play()
 pygame.event.wait()
 
-
 keys = []
 
-#Закрыть окно
+#закрытие окна
 def close():
     window.destroy()
 
-#Показать ключ(и)
+#Вывод клыча(ей)
 def show_keys():
     keys_var = StringVar(value=keys)
     listbox = Listbox( listvariable=keys_var)
     listbox.pack(expand=1, fill=BOTH)
     listbox.yview_scroll(number=1, what="units")
 
-#Сгенерировать ключ(и)
+#Генератор ключа(ей)
 def generate():
     p = int(arg_number_of_keys.get())
     for k in range (p + 1):
@@ -79,31 +80,31 @@ frame.place(relx=0.5, rely=0.5, anchor='center')
 #Создание заголовка окна
 window.title("keygen")
 
-#Number_keys и расположение
+#"Number_keys" и расположение
 lbl_number_keys = tk.Label(frame, text='количество сгенерируемых ключей', font=('Arial', 20), fg='black')
 lbl_number_keys.grid(column=0, row=0, padx=0, pady=1, sticky=NW)
 
-#Number_keys и расположение
+#"Number_keys" и расположение
 lbl_number_keys = tk.Label(frame, text='количество сгенерируемых ключей', font=('Arial', 20), fg='black')
 lbl_number_keys.grid(column=0, row=0, padx=0, pady=1, sticky=NW)
 
 
-#Создание окна аргумента number_of_keys
+#Создание окна аргумента "number_of_keys"
 arg_number_of_keys = tk.Entry(frame, width=9)
 arg_number_of_keys.insert(0, '')
 
-#Расположение окна аргумента number_of_keys
+#Расположение окна аргумента "number_of_keys"
 arg_number_of_keys.grid(column=0, row=1, padx=5, pady=7, sticky=EW)
 
-#Кнопка Generate
+#Кнопка "Generate"
 btn_generate = tk.Button(frame, text='Generate', command=generate)
 btn_generate.grid(column=0, row=2, padx=5, pady=5, sticky=NW)
 
-#Кнопка Cancel
+#Кнопка "Cancel"
 btn_exit = tk.Button(frame, text='Cancel', command=close)
 btn_exit.grid(column=0, row=2, padx=75, pady=5, sticky=NW)
 
-#Кнопка show keys
+#Кнопка "show keys"
 btn_show_keys = tk.Button(frame, text='Show keys', command=show_keys)
 btn_show_keys.grid(column=0, row=2, padx=135, pady=5, sticky=NW)
 
