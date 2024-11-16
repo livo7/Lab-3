@@ -3,6 +3,16 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import *
 import random
+import pygame
+
+
+file = '8-bit_M.mp3'
+pygame.init()
+pygame.mixer.init()
+pygame.mixer.music.load(file)
+pygame.mixer.music.play()
+pygame.event.wait()
+
 
 keys = []
 
