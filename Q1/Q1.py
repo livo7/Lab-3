@@ -8,10 +8,10 @@ import pygame
 #ПЕРЕД ИСПОЛЬЗОВАНИЕМ РЕКОМИНДУЕТСЯ ПРОЧИТАТЬ ПОЯСНЕНИЕ!
 
 #Модуль музыки
-file = '8-bit_M.mp3'
+file_music = '8-bit_M.mp3'
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load(file)
+pygame.mixer.music.load(file_music)
 pygame.mixer.music.play()
 pygame.event.wait()
 
@@ -23,8 +23,8 @@ def close():
 
 #Вывод клыча(ей)
 def show_keys():
-    keys_var = StringVar(value=keys)
-    listbox = Listbox( listvariable=keys_var)
+    all_keys = StringVar(value=keys)
+    listbox = Listbox( listvariable=all_keys)
     listbox.pack(expand=1, fill=BOTH)
     listbox.yview_scroll(number=1, what="units")
 
@@ -34,34 +34,34 @@ def generate():
     for k in range (p + 1):
         alf = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',]
         figure = ['0','1','2','3','4','5','6','7','8','9']
-        el0 = []
-        el1 = []
-        el2 = []
+        element0 = []
+        element1 = []
+        element2 = []
         for i in range(3):
             random_alf = random.choice(alf)
-            el0.append(random_alf)
+            element0.append(random_alf)
         for j in range(2):
             random_figure = random.choice(figure)
-            el0.append(random_figure)
+            element0.append(random_figure)
         random.shuffle(el0)
 
         for i in range(3):
             random_alf = random.choice(alf)
-            el1.append(random_alf)
+            element1.append(random_alf)
         for j in range(2):
             random_figure = random.choice(figure)
-            el1.append(random_figure)
+            element1.append(random_figure)
         random.shuffle(el1)
 
         for i in range(3):
             random_alf = random.choice(alf)
-            el2.append(random_alf)
+            element2.append(random_alf)
         for j in range(2):
             random_figure = random.choice(figure)
-            el2.append(random_figure)
+            element2.append(random_figure)
         random.shuffle(el2)
 
-        key = el0 + ['-'] + el1 + ['-'] + el2
+        key = element0 + ['-'] + element1 + ['-'] + element2
 
         keys.append(''.join(key))
     return keys
@@ -80,20 +80,15 @@ frame.place(relx=0.5, rely=0.5, anchor='center')
 #Создание заголовка окна
 window.title("keygen")
 
-#"Number_keys" и расположение
+#Создание текста "Number_keys", и расположение его
 lbl_number_keys = tk.Label(frame, text='количество сгенерируемых ключей', font=('Arial', 20), fg='black')
 lbl_number_keys.grid(column=0, row=0, padx=0, pady=1, sticky=NW)
 
-#"Number_keys" и расположение
-lbl_number_keys = tk.Label(frame, text='количество сгенерируемых ключей', font=('Arial', 20), fg='black')
-lbl_number_keys.grid(column=0, row=0, padx=0, pady=1, sticky=NW)
-
-
-#Создание окна аргумента "number_of_keys"
+#Создание окна аргумента "arg_number_of_keys"
 arg_number_of_keys = tk.Entry(frame, width=9)
 arg_number_of_keys.insert(0, '')
 
-#Расположение окна аргумента "number_of_keys"
+#Расположение окна аргумента "arg_number_of_keys"
 arg_number_of_keys.grid(column=0, row=1, padx=5, pady=7, sticky=EW)
 
 #Кнопка "Generate"
