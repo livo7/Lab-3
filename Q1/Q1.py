@@ -9,11 +9,10 @@ import pygame
 
 #Модуль музыки
 file_music = '8-bit_M.mp3'
-pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load(file_music)
-pygame.mixer.music.play()
-pygame.event.wait()
+my_mixer = pygame.mixer.Sound(file_music)
+my_mixer.set_volume(0.1)
+my_mixer.play()
 
 keys = []
 
@@ -43,7 +42,7 @@ def generate():
         for j in range(2):
             random_figure = random.choice(figure)
             element0.append(random_figure)
-        random.shuffle(el0)
+        random.shuffle(element0)
 
         for i in range(3):
             random_alf = random.choice(alf)
@@ -51,7 +50,7 @@ def generate():
         for j in range(2):
             random_figure = random.choice(figure)
             element1.append(random_figure)
-        random.shuffle(el1)
+        random.shuffle(element1)
 
         for i in range(3):
             random_alf = random.choice(alf)
@@ -59,7 +58,7 @@ def generate():
         for j in range(2):
             random_figure = random.choice(figure)
             element2.append(random_figure)
-        random.shuffle(el2)
+        random.shuffle(element2)
 
         key = element0 + ['-'] + element1 + ['-'] + element2
 
