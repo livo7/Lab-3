@@ -89,3 +89,40 @@ def show_keys():
 
     label=ttk.Label(window, text=keys_var)
     label.pack(anchor=NW, padx=1, pady=1)
+    
+    
+    
+    
+    
+    
+    
+    
+         
+        """ for i in range(3):
+            random_alf = random.choice(alf)
+            element0.append(random_alf)
+        for j in range(2):
+            random_figure = random.choice(figure)
+            element0.append(random_figure)
+        random.shuffle(element0)
+
+        for i in range(3):
+            random_alf = random.choice(alf)
+            element1.append(random_alf)
+        for j in range(2):
+            random_figure = random.choice(figure)
+            element1.append(random_figure)
+        random.shuffle(element1)
+
+        for i in range(3):
+            random_alf = random.choice(alf)
+            element2.append(random_alf)
+        for j in range(2):
+            random_figure = random.choice(figure)
+            element2.append(random_figure)
+        random.shuffle(element2)
+
+        key = element0 + ['-'] + element1 + ['-'] + element2 """
+
+        """ keys.append(''.join(key))
+    return keys """

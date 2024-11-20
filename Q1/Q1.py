@@ -30,44 +30,26 @@ def show_keys():
 #Генератор ключа(ей)
 def generate():
     p = int(arg_number_of_keys.get())
-    for k in range (p + 1):
+    for k in range (p):
         alf = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',]
         figure = ['0','1','2','3','4','5','6','7','8','9']
-        element0 = []
-        element1 = []
-        element2 = []
-        for i in range(3):
-            random_alf = random.choice(alf)
-            element0.append(random_alf)
-        for j in range(2):
-            random_figure = random.choice(figure)
-            element0.append(random_figure)
-        random.shuffle(element0)
-
-        for i in range(3):
-            random_alf = random.choice(alf)
-            element1.append(random_alf)
-        for j in range(2):
-            random_figure = random.choice(figure)
-            element1.append(random_figure)
-        random.shuffle(element1)
-
-        for i in range(3):
-            random_alf = random.choice(alf)
-            element2.append(random_alf)
-        for j in range(2):
-            random_figure = random.choice(figure)
-            element2.append(random_figure)
-        random.shuffle(element2)
-
-        key = element0 + ['-'] + element1 + ['-'] + element2
-
-        keys.append(''.join(key))
+        key = []
+        k = 0
+        while k < 3:
+            element = []
+            for _ in range(3):
+                element.append((random.choice(alf)))
+            for _ in range(2):
+                element.append((random.choice(figure)))
+            random.shuffle(element)
+            key.append(''.join(element))
+            k += 1
+        keys.append('-'.join(key))
     return keys
 
 #Создание бэкграунда и окна 
 window = tk.Tk()
-window.geometry('1920x1200')
+window.geometry('480x300')
 bg_img = tk.PhotoImage(file='123.png')
 lbl_bg = tk.Label(window, image=bg_img)
 lbl_bg.place(x=0, y=0, relwidth=1, relheight=1)

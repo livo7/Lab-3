@@ -124,7 +124,7 @@ listbox.yview_scroll(number=1, what="units")
     
 root.mainloop() """
 
-# подключаем модуль
+""" # подключаем модуль
 import pygame
 
 # Создаем окно
@@ -149,4 +149,8 @@ while True:
     elif keys[pygame.K_s]:
         pygame.mixer.pause()
     pygame.display.update()
-    pygame.time.delay(40)
+    pygame.time.delay(40) """
+    
+    
+a = [1, 2, 3, 4]
+print(map(str,a))
