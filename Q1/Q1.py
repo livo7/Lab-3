@@ -49,7 +49,7 @@ def generate():
 
 #Создание бэкграунда и окна 
 window = tk.Tk()
-window.geometry('480x300')
+window.geometry('1920x1200')
 bg_img = tk.PhotoImage(file='123.png')
 lbl_bg = tk.Label(window, image=bg_img)
 lbl_bg.place(x=0, y=0, relwidth=1, relheight=1)
