@@ -35,7 +35,7 @@ def generate():
         figure = ['0','1','2','3','4','5','6','7','8','9']
         key = []
         k = 0
-        while k < 3:
+        for _ in range (3):
             element = []
             for _ in range(3):
                 element.append((random.choice(alf)))
@@ -43,7 +43,6 @@ def generate():
                 element.append((random.choice(figure)))
             random.shuffle(element)
             key.append(''.join(element))
-            k += 1
         keys.append('-'.join(key))
     return keys
 
